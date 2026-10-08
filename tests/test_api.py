@@ -4,13 +4,14 @@ from collections.abc import AsyncIterator
 
 import pytest
 import pytest_asyncio
+from aiohttp import ClientSession, DummyCookieJar, web
+
 from aiohailo_libero import (
     HailoAuthenticationError,
     HailoClient,
     HailoProtocolError,
     parse_page,
 )
-from aiohttp import ClientSession, DummyCookieJar, web
 
 
 def device_page(values: dict[str, int] | None = None) -> str:
