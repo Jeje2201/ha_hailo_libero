@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jeje2201-aiohailo-libero"
+version = "0.1.0"
+description = "Asynchronous local client for Hailo Libero 3.0"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Jeje2201"}]
+dependencies = ["aiohttp>=3.11,<4", "beautifulsoup4>=4.12,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.25", "ruff>=0.11"]
+
+[tool.setuptools]
+packages = ["aiohailo_libero"]
+package-dir = {"" = "src"}
+
+[project.urls]
+Source = "https://github.com/Jeje2201/ha_hailo_libero"
+Issues = "https://github.com/Jeje2201/ha_hailo_libero/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]

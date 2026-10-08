@@ -1,0 +1,10 @@
+{
+  "entity": {
+    "button": {"open": {"default": "mdi:gesture-tap-button"}},
+    "number": {
+      "led": {"default": "mdi:brightness-6"},
+      "pwr": {"default": "mdi:arrow-expand-horizontal"},
+      "dist": {"default": "mdi:map-marker-distance"}
+    }
+  }
+}

@@ -1,0 +1,6 @@
+FROM python:3.14-slim
+WORKDIR /workspace
+RUN python -m pip install --no-cache-dir pytest-homeassistant-custom-component==0.13.370
+COPY . .
+RUN python -m pip install --no-cache-dir -e '.[dev]'
+CMD ["python", "-m", "pytest", "tests/homeassistant", "tests/test_distribution.py", "-q"]

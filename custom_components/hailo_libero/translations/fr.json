@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion au Hailo Libero",
+        "description": "Le controleur doit etre accessible depuis Home Assistant sur le reseau local.",
+        "data": {"host": "Adresse", "port": "Port", "password": "Mot de passe de l'appareil"},
+        "data_description": {"host": "Adresse IPv4 ou nom d'hote, sans http:// ni port.", "port": "Le port habituel de l'appareil est 81.", "password": "Mot de passe de l'interface web de l'appareil."}
+      },
+      "reauth_confirm": {
+        "title": "Reconnexion au Hailo Libero",
+        "description": "Saisir le mot de passe actuel de l'appareil.",
+        "data": {"host": "Adresse", "port": "Port", "password": "Mot de passe de l'appareil"},
+        "data_description": {"host": "Adresse IPv4 ou nom d'hote, sans http:// ni port.", "port": "Le port habituel de l'appareil est 81.", "password": "Mot de passe de l'interface web de l'appareil."}
+      },
+      "reconfigure": {
+        "title": "Reconfiguration du Hailo Libero",
+        "description": "Modifier l'adresse ou le mot de passe du meme controleur.",
+        "data": {"host": "Adresse", "port": "Port", "password": "Mot de passe de l'appareil"},
+        "data_description": {"host": "Adresse IPv4 ou nom d'hote, sans http:// ni port.", "port": "Le port habituel de l'appareil est 81.", "password": "Mot de passe de l'interface web de l'appareil."}
+      }
+    },
+    "error": {
+      "cannot_connect": "Connexion au controleur impossible.",
+      "invalid_auth": "Le controleur a refuse le mot de passe.",
+      "invalid_host": "Utiliser une adresse IPv4 ou un nom d'hote, sans http:// ni port.",
+      "unsupported_response": "L'interface web de ce controleur n'est pas prise en charge."
+    },
+    "abort": {
+      "already_configured": "Ce controleur est deja configure.",
+      "unique_id_mismatch": "Ce n'est pas le controleur configure initialement.",
+      "reauth_successful": "Authentification mise a jour.",
+      "reconfigure_successful": "Configuration mise a jour."
+    }
+  },
+  "entity": {
+    "button": {"open": {"name": "Ouvrir"}, "restart": {"name": "Redemarrer"}},
+    "number": {"led": {"name": "Luminosite LED"}, "pwr": {"name": "Force d'ouverture"}, "dist": {"name": "Distance de detection"}}
+  },
+  "exceptions": {
+    "command_failed": {"message": "Le controleur n'a pas confirme la commande. Verifier la connexion avant de reessayer."},
+    "invalid_auth": {"message": "Authentification refusee. Reauthentifier l'integration."},
+    "invalid_value": {"message": "Choisir un nombre entier dans la plage acceptee par le controleur."}
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Hailo Libero",
+        "description": "The device must be accessible from Home Assistant on your local network.",
+        "data": {"host": "Host", "port": "Port", "password": "Device password"},
+        "data_description": {"host": "IPv4 address or hostname, without http:// or a port.", "port": "The device normally uses port 81.", "password": "Password used by the device web interface."}
+      },
+      "reauth_confirm": {
+        "title": "Reconnect to Hailo Libero",
+        "description": "Enter the current device password.",
+        "data": {"host": "Host", "port": "Port", "password": "Device password"},
+        "data_description": {"host": "IPv4 address or hostname, without http:// or a port.", "port": "The device normally uses port 81.", "password": "Password used by the device web interface."}
+      },
+      "reconfigure": {
+        "title": "Reconfigure Hailo Libero",
+        "description": "Update the address or password of the same controller.",
+        "data": {"host": "Host", "port": "Port", "password": "Device password"},
+        "data_description": {"host": "IPv4 address or hostname, without http:// or a port.", "port": "The device normally uses port 81.", "password": "Password used by the device web interface."}
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the controller.",
+      "invalid_auth": "The controller rejected the password.",
+      "invalid_host": "Use an IPv4 address or hostname, without a URL scheme or port.",
+      "unsupported_response": "The controller web interface is not supported."
+    },
+    "abort": {
+      "already_configured": "This controller is already configured.",
+      "unique_id_mismatch": "This is not the controller originally configured.",
+      "reauth_successful": "Authentication updated successfully.",
+      "reconfigure_successful": "Configuration updated successfully."
+    }
+  },
+  "entity": {
+    "button": {"open": {"name": "Open"}, "restart": {"name": "Restart"}},
+    "number": {"led": {"name": "LED brightness"}, "pwr": {"name": "Pull-out force"}, "dist": {"name": "Detection range"}}
+  },
+  "exceptions": {
+    "command_failed": {"message": "The controller did not confirm the command. Check its connection before retrying."},
+    "invalid_auth": {"message": "Authentication failed. Reauthenticate the integration."},
+    "invalid_value": {"message": "Choose a whole number within the range supported by the controller."}
+  }
+}
